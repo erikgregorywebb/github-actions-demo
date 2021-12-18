@@ -24,12 +24,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: execute py script # run sj-gobierno.py to get the latest data
-        env: 
-          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
-        run: python sj-gobierno.py
+      - name: execute py script # run freddiemac.py to get the latest data
+        run: python freddiemac.py
           
       - name: commit files
         run: |
