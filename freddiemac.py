@@ -10,7 +10,7 @@ soup = BeautifulSoup(page.content, "html.parser")
 
 # get current date and datetime
 current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-current_date = datetime.now().strftime('%Y-%m-%d')
+current_datetime_label = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 
 # extract values
 items = []
@@ -26,5 +26,5 @@ df = pd.DataFrame(items)
 df.columns = ['name', 'rate', 'fees', 'datetime']
 
 # export to csv
-file_path = 'data/freddiemac-rates-' + current_date + '.csv'
+file_path = 'data/fm-rates-' + current_datetime_label + '.csv'
 df.to_csv(file_path, index = False)
